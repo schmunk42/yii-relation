@@ -11,6 +11,9 @@
             "homepage": "http://www.usrbin.de"
         }
     ],
+    "autoload": {
+        "classmap": ["behaviors/", "widgets/"]
+    },
     "require": {
         "php": ">=5.3.0",
         "yiisoft/yii": "1.1.*"
