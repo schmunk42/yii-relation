@@ -495,20 +495,14 @@ class GtcRelation extends CWidget
     {
         if (strcasecmp($this->style, 'twopane') == 0) {
             $this->renderTwoPaneSelection();
+        } elseif (strcasecmp($this->style, 'checkbox') == 0) {
+            $this->renderCheckBoxListSelection();
+        } elseif (strcasecmp($this->style, 'dropDownList') == 0) {
+            $this->renderManyManyDropDownListSelection();
+        } elseif (strcasecmp($this->style, 'radiobutton') == 0) {
+            $this->renderManyManyRadioButtonListSelection();
         } else {
-            if (strcasecmp($this->style, 'checkbox') == 0) {
-                $this->renderCheckBoxListSelection();
-            } else {
-                if (strcasecmp($this->style, 'dropDownList') == 0) {
-                    $this->renderManyManyDropDownListSelection();
-                } else {
-                    if (strcasecmp($this->style, 'radiobutton') == 0) {
-                        $this->renderManyManyRadioButtonListSelection();
-                    } else {
-                        $this->renderOnePaneSelection();
-                    }
-                }
-            }
+            $this->renderOnePaneSelection();
         }
     }
 
