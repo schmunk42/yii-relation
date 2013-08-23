@@ -286,13 +286,10 @@ class GtcRelation extends CWidget
             } else // Show all Parent elements
             {
                 if ($this->criteria === false) {
-                    // TODO: reimplement ORDER BY array('order'=>GHelper::guessNameColumn($this->_relatedModel->tableSchema->columns))
                     $parentobjects = CActiveRecord::model(get_class($this->_relatedModel))->findAll();
                 } else {
                     $parentobjects = CActiveRecord::model(get_class($this->_relatedModel));
-                    $parentobjects->setDbCriteria($this->criteria);
-                    // TODO: reimplement ORDER BY array('order'=>GHelper::guessNameColumn($this->_relatedModel->tableSchema->columns))
-                    $parentobjects = $parentobjects->findAll();
+                    $parentobjects = $parentobjects->findAll($this->criteria);
                 }
             }
         }
