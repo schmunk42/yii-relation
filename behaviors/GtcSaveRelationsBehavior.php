@@ -429,6 +429,10 @@ class GtcSaveRelationsBehavior extends CActiveRecordBehavior
                             // HasMany & HasOne relation : delete related records
                             $relatedRecord = new $relationClassName;
                             $criteria      = new CDbCriteria;
+                            // handle array based foreign keys
+                            if (is_array($relationForeignKey)) {
+                                $relationForeignKey = key($relationForeignKey);
+                            }
                             $criteria->addColumnCondition(array($relationForeignKey => $model->primaryKey));
                             $relatedRecord->deleteAll($criteria);
                         }
