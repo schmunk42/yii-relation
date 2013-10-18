@@ -372,7 +372,7 @@ class GtcSaveRelationsBehavior extends CActiveRecordBehavior
                     isset($this->relations[$relation]['message']) ? $this->relations[$relation]['message'] : "An error occured during the save of {$relation}"
                 );
             }
-            if ($this->transactional && $this->transaction) {
+            if ($this->transactional && $this->transaction->active) {
                 $this->transaction->rollBack();
             }
         }
