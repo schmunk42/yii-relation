@@ -4,6 +4,8 @@ Relation
 * `GtcSaveRelationsBehavior` saves related records.
 * `GtcRelation` displays an input widget for relations.
 
+*These components were originally part of the gii-template-collection, credits to [thyseus](https://github.com/thyseus/)*
+
 Usage
 -----
 
