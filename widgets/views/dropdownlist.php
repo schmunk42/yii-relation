@@ -7,4 +7,5 @@ echo CHtml::ActiveDropDownList(
     $htmlOptions
 );
 echo CHtml::closeTag('div');
+echo CHtml::hiddenField($id.'_exists');
 ?>
