@@ -3,14 +3,14 @@
      The Relation widget is used in forms, where the User can choose
      between a selection of model elements, that this models belongs to.
 
-     It is able to handle BELONGS_TO, HAS_ONE and MANY_MANY Relations. The Relation 
-     type is detected automatically from the Model 'relations()' section. 
+     It is able to handle BELONGS_TO, HAS_ONE and MANY_MANY Relations. The Relation
+     type is detected automatically from the Model 'relations()' section.
 
      The Widget has different styles in which it can render the possible choices.
      Use the 'style' option to set the appropriate style.
 
-     The following example shows how to use Relation with a minimal config, 
-     assuming we have a Model "Post" and "User", where one User belongs 
+     The following example shows how to use Relation with a minimal config,
+     assuming we have a Model "Post" and "User", where one User belongs
      to a Post:
 
      <pre>
@@ -23,7 +23,7 @@
 
      Results in a drop down list in which the user can choose between
      all available Users in the Database. The shown field of the
-     Table "User" is "username" in this example. 
+     Table "User" is "username" in this example.
 
      You can choose the Style of your Widget in the 'style' option.
      Note that a Many_Many Relation always gets rendered as a Listbox,
@@ -46,7 +46,7 @@
      Normally you shouldn´t use this fields cause the Widget get the relations
      automatically from the relation.
 
-     Use 'allowEmpty' to let the user be able to choose no parent. If you 
+     Use 'allowEmpty' to let the user be able to choose no parent. If you
      set this to a string, this string will be displayed with the available
      choices.
 
@@ -62,7 +62,7 @@
 
      <pre>
      if($model->save())
-     if(isset($_GET['returnTo'])) 
+     if(isset($_GET['returnTo']))
      $this->redirect(array(urldecode($_GET['returnTo'])));
      </pre>
 
@@ -78,10 +78,10 @@ With 'parentObjects' you can limit the Parent Elements that are being shown.
 It takes an array of elements that could be returned from an scope or
 an SQL Query.
 
-The parentObjects can be grouped, for example,  with 
+The parentObjects can be grouped, for example,  with
 'groupParentsBy' => 'city'
 
-Use the option 'htmlOptions' to pass any html Options to the 
+Use the option 'htmlOptions' to pass any html Options to the
 Selectbox/Listbox form element.
 
 Full Example:
@@ -654,6 +654,7 @@ class GtcRelation extends CWidget
             $this->getRelatedData(),
             array('multiple' => 'multiple')
         );
+        echo CHtml::hiddenField('exist_'.$this->getListBoxName());
     }
 
     public function handleAjaxRequest($post)

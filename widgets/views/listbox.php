@@ -6,6 +6,6 @@ echo CHtml::ActiveListBox(
     $data,
     $htmlOptions
 );
-
 echo CHtml::closeTag('div');
+echo CHtml::hiddenField($id.'_exists');
 ?>
